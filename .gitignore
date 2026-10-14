@@ -1,0 +1,50 @@
+# Environment files
+backend/.env
+backend/.env.*
+
+# Laravel dependencies
+backend/vendor/
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Build files
+backend/public/build/
+frontend/dist/
+
+# Laravel runtime files
+backend/storage/*.key
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+
+# Laravel generated files
+backend/public/hot
+backend/public/storage
+
+# Logs
+*.log
+
+# IDE files
+.idea/
+.vscode/
+.fleet/
+.nova/
+.zed/
+
+# PHP tools
+.phpunit.result.cache
+.phpunit.cache
+.phpactor.json
+
+# Composer auth
+auth.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Laravel local development
+Homestead.json
+Homestead.yaml

@@ -1,0 +1,344 @@
+/* ══════════════════════════════════════════
+   My Leave Page
+══════════════════════════════════════════ */
+
+.myleave-page { width: 100%; }
+
+/* ── Top 2-col grid ─────────────────────── */
+.myleave-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .myleave-top { grid-template-columns: 1fr; }
+}
+
+.myleave-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+/* ══════════════════════════════════════════
+   DONUT CHART
+══════════════════════════════════════════ */
+
+.balance-card-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  padding: 16px 0 20px;
+  box-sizing: border-box;
+}
+
+.donut-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex: 0 0 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-svg {
+  display: block;
+  width: 180px;
+  height: 180px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.07));
+}
+
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.donut-val {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+.donut-sub {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Loading skeleton for donut */
+.donut-loading-wrap {
+  width: 180px; height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.donut-loading-ring {
+  width: 128px; height: 128px;
+  border: 24px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: donut-spin 0.9s linear infinite;
+}
+@keyframes donut-spin { to { transform: rotate(360deg); } }
+
+.balance-empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding: 20px 0;
+}
+
+/* Legend */
+.balance-legend {
+  width: 150px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex: 0 0 14px;
+}
+
+.legend-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  gap: 5px;
+}
+
+.legend-name {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.legend-nums {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+/* Totals row */
+.bal-totals {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+.bal-total-item { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; }
+.bal-total-num  { font-size: var(--font-size-base); font-weight: 800; }
+.bal-total-lbl  { font-size: 9px; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.bal-total-sep  { width: 1px; height: 26px; background: var(--color-border); }
+.bal-total-num.used  { color: var(--color-accent-magenta, #D82274); }
+.bal-total-num.avail { color: var(--color-accent-light-blue, #2E6BC6); }
+.bal-total-num.total { color: var(--color-secondary, #5C246E); }
+
+/* ══════════════════════════════════════════
+   CALENDAR
+══════════════════════════════════════════ */
+
+.leave-cal { user-select: none; }
+
+.cal-hd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.cal-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  min-width: 148px;
+  text-align: center;
+}
+.cal-nav-btn {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 18px;
+  transition: all var(--transition-fast);
+}
+.cal-nav-btn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.cal-day-hd {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 0 5px;
+}
+
+/* Each day cell */
+.cal-day {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: background var(--transition-fast);
+}
+.cal-num {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  z-index: 1;
+  position: relative;
+}
+
+/* Weekend faint */
+.cal-grid > .cal-day:nth-child(7n+1) .cal-num,
+.cal-grid > .cal-day:nth-child(7n) .cal-num { opacity: 0.45; }
+
+/* Today */
+.cal-day.is-today { background: var(--color-primary); border-radius: 50% !important; }
+.cal-day.is-today .cal-num { color: #fff; font-weight: 700; }
+
+/* Approved leave — amber */
+.cal-day.is-approved { background: rgba(245,158,11,0.22); }
+.cal-day.is-approved .cal-num { color: #92400e; }
+[data-theme="dark"] .cal-day.is-approved .cal-num { color: #fde68a; }
+
+/* Pending leave — bright yellow badge styling */
+.cal-day.is-pending { background: #fef08a !important; border: 1px solid #facc15; }
+.cal-day.is-pending .cal-num { color: #854d0e !important; font-weight: 700; }
+[data-theme="dark"] .cal-day.is-pending { background: #854d0e !important; border-color: #facc15; }
+[data-theme="dark"] .cal-day.is-pending .cal-num { color: #fef08a !important; }
+
+/* Rejected leave — red faint */
+.cal-day.is-rejected { background: rgba(239,68,68,0.12); }
+.cal-day.is-rejected .cal-num { color: #b91c1c; }
+[data-theme="dark"] .cal-day.is-rejected .cal-num { color: #fca5a5; }
+
+/* Half day — diagonal split */
+.cal-day.is-halfday {
+  background: linear-gradient(135deg, rgba(245,158,11,0.28) 50%, transparent 50%);
+}
+.cal-day.is-halfday .cal-num { color: #92400e; }
+[data-theme="dark"] .cal-day.is-halfday .cal-num { color: #fde68a; }
+
+/* Half dot indicator */
+.half-dot {
+  position: absolute;
+  bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+/* Holiday — orange */
+.cal-day.is-holiday { background: rgba(249,115,22,0.18); }
+.cal-day.is-holiday .cal-num { color: #c2410c; }
+[data-theme="dark"] .cal-day.is-holiday .cal-num { color: #fdba74; }
+
+/* Calendar legend */
+.cal-leg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  margin-top: 4px;
+}
+.cal-leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+.cal-leg-dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.ld-today    { background: var(--color-primary); border-radius: 50%; }
+.ld-approved { background: rgba(245,158,11,0.55); }
+.ld-halfday  { background: linear-gradient(135deg, rgba(245,158,11,0.55) 50%, var(--color-border) 50%); }
+.ld-holiday  { background: rgba(249,115,22,0.45); }
+.ld-pending  { background: #facc15 !important; }
+
+@media (max-width: 500px) {
+  .balance-card-wrap {
+    gap: 18px;
+  }
+
+  .donut-container {
+    width: 150px;
+    height: 150px;
+    flex-basis: 150px;
+  }
+
+  .donut-svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .balance-legend {
+    width: auto;
+    min-width: 0;
+  }
+
+  .legend-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .balance-card-wrap {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .balance-legend {
+    width: 100%;
+  }
+}

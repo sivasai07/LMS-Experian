@@ -1,0 +1,89 @@
+/* ─────────────────────────────────────────────────────────────
+   Experian Design System — Dark Theme Override
+   Midnight Navy base, Luminous Experian Blue/Magenta/Purple highlights,
+   crisp neutral light greys, and high-contrast readable states.
+   ───────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  /* ── Brand Colors (Dark Mode — Luminosity Boost) ─────────── */
+  --color-primary: #4A85E6;               /* Luminous Experian Blue */
+  --color-primary-hover: #679DEE;
+  --color-primary-active: #3172D6;
+  --color-primary-light: rgba(46, 107, 198, 0.22);
+  --color-secondary: #9B45B5;             /* Luminous Experian Purple */
+  --color-secondary-hover: #AF5EC9;
+  --color-secondary-light: rgba(92, 36, 110, 0.28);
+  --color-accent-magenta: #E53986;        /* Luminous Experian Magenta */
+  --color-accent-magenta-hover: #F0559A;
+  --color-accent-magenta-light: rgba(216, 34, 116, 0.25);
+  --color-accent-raspberry: #D62F81;
+  --color-accent-raspberry-light: rgba(184, 32, 104, 0.25);
+  --color-accent-light-blue: #38BDF8;
+  --color-accent-light-blue-light: rgba(56, 189, 248, 0.2);
+
+  /* ── Gradients (Dark Mode) ────────────────────────────────── */
+  --gradient-experian: linear-gradient(135deg, #2E6BC6 0%, #7B287D 50%, #E53986 100%);
+  --gradient-experian-blue: linear-gradient(135deg, #1D3B7A 0%, #4A85E6 100%);
+  --gradient-experian-accent: linear-gradient(135deg, #7B287D 0%, #D62F81 50%, #E53986 100%);
+  --gradient-experian-subtle: linear-gradient(135deg, rgba(74, 133, 230, 0.12) 0%, rgba(155, 69, 181, 0.12) 50%, rgba(229, 57, 134, 0.12) 100%);
+
+  /* ── Data Visualization / Tertiary Tones (Dark Mode) ──────── */
+  --color-chart-1: #4A85E6;  /* Vibrant Blue */
+  --color-chart-2: #38BDF8;  /* Sky Blue */
+  --color-chart-3: #A855F7;  /* Purple */
+  --color-chart-4: #F43F5E;  /* Raspberry */
+  --color-chart-5: #EC4899;  /* Magenta */
+  --color-chart-6: #22D3EE;  /* Cyan */
+  --color-chart-7: #34D399;  /* Emerald */
+  --color-chart-8: #FBBF24;  /* Amber */
+  --color-chart-9: #C084FC;  /* Lavender */
+  --color-chart-10: #818CF8; /* Indigo */
+
+  /* ── Semantic Feedback Tones (Dark Mode) ──────────────────── */
+  --color-success: #34D399;
+  --color-success-hover: #10B981;
+  --color-success-bg: rgba(16, 185, 129, 0.18);
+  --color-warning: #FBBF24;
+  --color-warning-hover: #F59E0B;
+  --color-warning-bg: rgba(245, 158, 11, 0.18);
+  --color-danger: #F87171;
+  --color-danger-hover: #EF4444;
+  --color-danger-bg: rgba(239, 68, 68, 0.18);
+  --color-info: #38BDF8;
+  --color-info-hover: #0284C7;
+  --color-info-bg: rgba(56, 189, 248, 0.18);
+
+  /* ── Neutral Surfaces (Dark Mode — Experian Midnight Navy) ── */
+  --color-bg: #0B132B;                    /* Deep Experian Midnight Navy */
+  --color-surface: #111D3B;               /* Card surface */
+  --color-surface-raised: #18284E;
+  --color-surface-hover: #1C2E59;
+  --color-border: #1E2F5B;
+  --color-border-hover: #2E457F;
+  --color-border-focus: #4A85E6;
+
+  /* ── Neutral Greys for Body Text (Dark Mode) ──────────────── */
+  --color-text-primary: #F8FAFC;          /* Clean crisp white */
+  --color-text-secondary: #CBD5E1;        /* Soft neutral light grey */
+  --color-text-muted: #94A3B8;            /* Cool muted grey */
+  --color-text-light: #64748B;
+  --color-text-inverse: #0B132B;
+
+  /* ── Sidebar (Dark Mode) ──────────────────────────────────── */
+  --sidebar-bg: #070D1F;                  /* Deepest Experian Navy */
+  --sidebar-text: #8292A8;
+  --sidebar-text-active: #F8FAFC;
+  --sidebar-item-hover: rgba(216, 34, 116, 0.16);
+  --sidebar-item-active: #D82274;         /* Vibrant Magenta highlight */
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+
+  /* ── Navbar (Dark Mode) ───────────────────────────────────── */
+  --navbar-bg: #0E172F;
+  --navbar-border: #1C2B4E;
+
+  /* ── Shadows with Glow (Dark Mode) ────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.65);
+  --shadow-xl: 0 20px 36px rgba(0, 0, 0, 0.75);
+  --shadow-experian: 0 8px 24px rgba(229, 57, 134, 0.28);
+}

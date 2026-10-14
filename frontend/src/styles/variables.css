@@ -1,0 +1,141 @@
+/* ─────────────────────────────────────────────────────────────
+   Experian Design System Tokens — Light Theme (Default)
+   Colors: Experian Dark/Light Blue, Purple, Raspberry, Magenta,
+   support tones for data visualization, and neutral greys for body text.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* ── Core Experian Brand Palette ──────────────────────────── */
+  --color-experian-dark-blue: #1D3B7A;    /* Corporate Deep Navy */
+  --color-experian-blue: #224488;         /* Experian Signature Blue */
+  --color-experian-light-blue: #2E6BC6;   /* Experian Bright/Light Blue */
+  --color-experian-sky: #00A3E0;          /* Experian Cyan / Sky Blue */
+  --color-experian-purple: #5C246E;       /* Experian Purple */
+  --color-experian-violet: #7B287D;       /* Experian Medium Violet */
+  --color-experian-plum: #90257C;         /* Experian Plum */
+  --color-experian-raspberry: #B82068;    /* Experian Raspberry */
+  --color-experian-magenta: #D82274;      /* Experian Magenta */
+  --color-experian-pink: #E5257C;         /* Experian Bright Pink */
+
+  /* ── Primary UI Brand Roles ───────────────────────────────── */
+  --color-primary: #224488;
+  --color-primary-hover: #193366;
+  --color-primary-active: #132448;
+  --color-primary-light: #EEF4FD;
+  --color-secondary: #5C246E;
+  --color-secondary-hover: #481B57;
+  --color-secondary-light: #F7EFF9;
+  --color-accent-magenta: #D82274;
+  --color-accent-magenta-hover: #BF1B64;
+  --color-accent-magenta-light: #FDF2F7;
+  --color-accent-raspberry: #B82068;
+  --color-accent-raspberry-light: #FDF2F7;
+  --color-accent-light-blue: #2E6BC6;
+  --color-accent-light-blue-light: #F0F6FE;
+
+  /* ── Signature Experian Gradients ─────────────────────────── */
+  --gradient-experian: linear-gradient(135deg, #224488 0%, #5C246E 50%, #D82274 100%);
+  --gradient-experian-blue: linear-gradient(135deg, #1D3B7A 0%, #2E6BC6 100%);
+  --gradient-experian-accent: linear-gradient(135deg, #5C246E 0%, #B82068 50%, #D82274 100%);
+  --gradient-experian-subtle: linear-gradient(135deg, rgba(34, 68, 136, 0.07) 0%, rgba(92, 36, 110, 0.07) 50%, rgba(216, 34, 116, 0.07) 100%);
+
+  /* ── Tertiary Colors for Data Visualization ───────────────── */
+  --color-chart-1: #224488;  /* Experian Deep Blue */
+  --color-chart-2: #2E6BC6;  /* Experian Light Blue */
+  --color-chart-3: #5C246E;  /* Experian Purple */
+  --color-chart-4: #B82068;  /* Experian Raspberry */
+  --color-chart-5: #D82274;  /* Experian Magenta */
+  --color-chart-6: #00A3E0;  /* Experian Sky Blue */
+  --color-chart-7: #10B981;  /* Emerald Support */
+  --color-chart-8: #F59E0B;  /* Amber Support */
+  --color-chart-9: #8B5CF6;  /* Lavender Support */
+  --color-chart-10: #06B6D4; /* Cyan Support */
+
+  /* ── Semantic Feedback Tones ──────────────────────────────── */
+  --color-success: #059669;
+  --color-success-hover: #047857;
+  --color-success-bg: #ECFDF5;
+  --color-warning: #D97706;
+  --color-warning-hover: #B45309;
+  --color-warning-bg: #FFFBEB;
+  --color-danger: #DC2626;
+  --color-danger-hover: #B91C1C;
+  --color-danger-bg: #FEF2F2;
+  --color-info: #2E6BC6;
+  --color-info-hover: #224488;
+  --color-info-bg: #EFF6FF;
+
+  /* ── Neutral Surfaces (Light Mode) ────────────────────────── */
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-hover: #F1F5F9;
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+  --color-border-focus: #2E6BC6;
+
+  /* ── Neutral Greys for Body Text ──────────────────────────── */
+  --color-text-primary: #1E293B;       /* Deep slate grey */
+  --color-text-secondary: #475569;     /* Medium slate grey */
+  --color-text-muted: #64748B;         /* Cool neutral grey */
+  --color-text-light: #94A3B8;         /* Light grey */
+  --color-text-inverse: #FFFFFF;
+
+  /* ── Sidebar (Light Mode) ─────────────────────────────────── */
+  --sidebar-bg: #0F1D38;               /* Experian Midnight Navy */
+  --sidebar-text: #94A3B8;
+  --sidebar-text-active: #FFFFFF;
+  --sidebar-item-hover: rgba(46, 107, 198, 0.16);
+  --sidebar-item-active: #2E6BC6;      /* Experian Light Blue highlight */
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-width: 260px;
+  --sidebar-width-collapsed: 72px;
+
+  /* ── Navbar (Light Mode) ──────────────────────────────────── */
+  --navbar-height: 64px;
+  --navbar-bg: #FFFFFF;
+  --navbar-border: #E2E8F0;
+
+  /* ── Shadows with Experian Brand Glow ─────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(34, 68, 136, 0.05);
+  --shadow-md: 0 4px 12px rgba(34, 68, 136, 0.08);
+  --shadow-lg: 0 10px 24px rgba(34, 68, 136, 0.12);
+  --shadow-xl: 0 20px 32px rgba(34, 68, 136, 0.16);
+  --shadow-experian: 0 8px 24px rgba(216, 34, 116, 0.16);
+
+  /* ── Border Radius ────────────────────────────────────────── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'Consolas', monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+
+  /* ── Spacing ──────────────────────────────────────────────── */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* ── Transitions ──────────────────────────────────────────── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Z-Index Layers ───────────────────────────────────────── */
+  --z-sidebar: 100;
+  --z-navbar: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+}

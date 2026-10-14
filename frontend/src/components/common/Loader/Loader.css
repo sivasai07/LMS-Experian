@@ -1,0 +1,189 @@
+/* ─────────────────────────────────────────────────────────────
+   Experian 'e' Brand Loader Animations
+   Staggered pulse & floating orbit effects across Experian brand tiles:
+   Light Blue, Magenta, Raspberry, Violet, Purple & central 'e'.
+   ───────────────────────────────────────────────────────────── */
+
+.loader-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 220px;
+  gap: 16px;
+  transition: background-color var(--transition-base);
+}
+
+.loader-screen.fullscreen {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.experian-loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.experian-loader-svg {
+  width: 68px;
+  height: 68px;
+  overflow: visible;
+  filter: drop-shadow(0 4px 12px rgba(34, 68, 136, 0.12));
+}
+
+/* Sizing variations */
+.loader-size-sm .experian-loader-svg {
+  width: 40px;
+  height: 40px;
+}
+
+.loader-size-lg .experian-loader-svg {
+  width: 96px;
+  height: 96px;
+}
+
+/* ── Central Experian 'e' ───────────────────────────────────── */
+.exp-letter-e {
+  fill: var(--color-primary);
+  transform-origin: 62px 55px;
+  animation: exp-e-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transition: fill var(--transition-base);
+}
+
+[data-theme="dark"] .exp-letter-e {
+  fill: #FFFFFF;
+  filter: drop-shadow(0 0 10px rgba(74, 133, 230, 0.45));
+}
+
+@keyframes exp-e-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* ── Orbiting Mosaic Tiles ──────────────────────────────────── */
+
+/* Top Tile: Experian Light Blue */
+.exp-tile-top {
+  fill: var(--color-experian-light-blue, #2E6BC6);
+  transform-origin: 55px 17px;
+  animation: exp-tile-float 2.2s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+/* Top-Right Tile: Experian Magenta */
+.exp-tile-tr {
+  fill: var(--color-experian-magenta, #D82274);
+  transform-origin: 86px 23px;
+  animation: exp-tile-float 2.2s ease-in-out infinite;
+  animation-delay: 0.22s;
+}
+
+/* Large Left Tile: Experian Purple */
+.exp-tile-left {
+  fill: var(--color-experian-purple, #5C246E);
+  transform-origin: 20px 37px;
+  animation: exp-tile-float 2.2s ease-in-out infinite;
+  animation-delay: 0.44s;
+}
+
+/* Bottom-Left Tile: Experian Plum / Violet */
+.exp-tile-bl {
+  fill: var(--color-experian-plum, #90257C);
+  transform-origin: 22px 66px;
+  animation: exp-tile-float 2.2s ease-in-out infinite;
+  animation-delay: 0.66s;
+}
+
+/* Bottom Tile: Experian Raspberry */
+.exp-tile-bottom {
+  fill: var(--color-experian-raspberry, #B82068);
+  transform-origin: 45px 89px;
+  animation: exp-tile-float 2.2s ease-in-out infinite;
+  animation-delay: 0.88s;
+}
+
+[data-theme="dark"] .exp-tile-top {
+  fill: #38BDF8;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.5));
+}
+[data-theme="dark"] .exp-tile-tr {
+  fill: #E53986;
+  filter: drop-shadow(0 0 6px rgba(229, 57, 134, 0.5));
+}
+[data-theme="dark"] .exp-tile-left {
+  fill: #9B45B5;
+  filter: drop-shadow(0 0 6px rgba(155, 69, 181, 0.5));
+}
+[data-theme="dark"] .exp-tile-bl {
+  fill: #C084FC;
+  filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.5));
+}
+[data-theme="dark"] .exp-tile-bottom {
+  fill: #D62F81;
+  filter: drop-shadow(0 0 6px rgba(214, 47, 129, 0.5));
+}
+
+@keyframes exp-tile-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.95;
+  }
+  30% {
+    transform: translateY(-4px) scale(1.12);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(2px) scale(0.94);
+    opacity: 0.88;
+  }
+}
+
+.loader-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-base);
+}
+
+/* ── Inline Spinner ─────────────────────────────────────────── */
+.spinner-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.spinner-inline-svg {
+  width: 18px;
+  height: 18px;
+  overflow: visible;
+}
+
+.spinner-inline-svg .exp-letter-e {
+  animation: exp-e-pulse 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.spinner-inline-svg .exp-tile-top,
+.spinner-inline-svg .exp-tile-tr,
+.spinner-inline-svg .exp-tile-left,
+.spinner-inline-svg .exp-tile-bl,
+.spinner-inline-svg .exp-tile-bottom {
+  animation: exp-tile-float 1.4s ease-in-out infinite;
+}
+
+.spinner-inline-svg .exp-tile-top { animation-delay: 0s; }
+.spinner-inline-svg .exp-tile-tr { animation-delay: 0.15s; }
+.spinner-inline-svg .exp-tile-left { animation-delay: 0.3s; }
+.spinner-inline-svg .exp-tile-bl { animation-delay: 0.45s; }
+.spinner-inline-svg .exp-tile-bottom { animation-delay: 0.6s; }
